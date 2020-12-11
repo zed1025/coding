@@ -1,0 +1,15 @@
+
+Windows
+
+cd into the directory where you want to start mysql
+type
+	mysql -u root -p db_name
+where db_name is any database in the sql server.
+Ex. world
+
+
+
+Mac
+Start mamp server 
+Open terminal and type
+/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot

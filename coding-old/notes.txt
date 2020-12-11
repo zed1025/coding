@@ -1,0 +1,51 @@
+The following lines at the beginning of the code make input and output more efficient
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+\n works faster than endl because endl always causes a flush operation
+
+reading a whole line from the input
+    string s;
+    getline(cin, s);
+
+when files are used for input and optput during a contest, add the following lines to the beginning of the code
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+after these lines, the program reads input from the file "input.txt" and writes output to the file "output.txt"
+
+32-bit int range -2*10^9 ... 2*10^9
+
+the following code has a mistake
+    int a = 123456789;
+    long long b = a*a;
+    cout << b << "\n"; // -1757895751
+here even though b is of type long long, the RHS is of type int, so the entire expression is of type int
+to cast a*a to int use
+    (long long)a*a;
+
+g++ compiler also provides a 128bit integer type __int128_t
+
+sometimes we have to calculate answer ”modulo 10^9 + 7”. an important property of modulo
+    (a + b) mod m = (a mod m + b mod m) mod m
+    (a - b) mod m = (a mod m - b mod m) mod m
+    (a * b) mod m = (a mod m * b mod m) mod m
+
+g++ compilers provide 80-bit 'long double' which is more precise than 'double'
+
+It is risky to compare floating point numbers with the == operator, because it
+is possible that the values should be equal but they are not because of precision
+errors. A better way to compare floating point numbers is to assume that two
+numbers are equal if the difference between them is less than ", where " is a
+small number.
+    if (abs(a-b) < 1e-9) {
+        // a and b are equal
+    }
+
+arithmetic progression
+geometric progression
+Binet's Formula for nth fibonacci numbers
+
+A cool property of logarithms
+the number of digits of an integer x in base b is floor(logb(x) + 1)
+For example, the representation of 123 in base
+2 is 1111011 and (log2(123)+1) = 7
